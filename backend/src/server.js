@@ -18,7 +18,7 @@ const __dirname = path.resolve();
 app.use(
   cors({
     origin: process.env.NODE_ENV === "production" 
-      ? ["https://streamify-iota-blond.vercel.app"]
+      ? process.env.FRONTEND_URL || true
       : "http://localhost:5173",
     credentials: true,
   })
